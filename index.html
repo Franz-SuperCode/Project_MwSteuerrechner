@@ -16,10 +16,11 @@
             <div class="div_was">
                 <p>Was soll berechnet werden?</p>
                 <label for="radio_aufschlagen">Mehrwertsteuer aufschlagen (Netto zu Brutto</label>
-                <input onchange="text()" id="radio_aufschlagen" type="radio" value="aufschlagen" name="radio"> <br>
+                <input onchange="changeText()" id="radio_aufschlagen" type="radio" value="aufschlagen" name="radio">
+                <br>
 
                 <label for="radio_abziehen">Mehrwertsteuer abzeihen (Brutto zu Netto)</label>
-                <input onchange="text()" type="radio" id="radio_abziehen" value="abziehen" name="radio">
+                <input onchange="changeText()" type="radio" id="radio_abziehen" value="abziehen" name="radio">
             </div>
             <div class="div_steuersatz">
                 <p>Mehrwertsteuersatz:</p>
@@ -39,7 +40,7 @@
         <h1>Ergebnis:</h1>
         <p>Mehrwertsteuerbetrag:</p>
         <p id="mehrwert_output">MEHRWERTBETRAG</p>
-        <p>Bruttobetrag (Endpreis)</p>
+        <p id="derText">Bruttobetrag (Endpreis)</p>
         <p id="b-n_output"> B-N-BETRAG</p>
     </main>
 

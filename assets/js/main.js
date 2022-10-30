@@ -57,17 +57,15 @@ const abziehen = (mehrwertErgebnis, input) => {
     console.log(abziehen);
 }
 
-
-//=========== text ändern ========================
-
-
-
-const text = () => {
+//=========== Texte ändern ========================
+const changeText = () => {
     if (document.querySelector("#radio_aufschlagen").checked) {
         document.querySelector("#label_input").innerHTML = "Nettobetrag (Preis ohne Mehrwertsteuer in Euro)";
+        document.querySelector("#derText").innerHTML = "Bruttobetrag (Endpreis)";
     }
     else if (document.querySelector("#radio_abziehen").checked) {
         document.querySelector("#label_input").innerHTML = "Bruttobetrag (Preis mit Mehrwertsteuer in Euro)";
+        document.querySelector("#derText").innerHTML = "Nettobetrag";
 
     } else {
         console.log("Bitte auswählen was berechnet werden soll!");
