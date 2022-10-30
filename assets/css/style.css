@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main form div {
+  background-color: lightgray;
+  margin-bottom: px;
+}
+main form div p {
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=style.css.map */
