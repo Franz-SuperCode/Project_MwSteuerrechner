@@ -5,46 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steuerrechner</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
 </head>
 
 <body>
-
-    <main>
-        <form action="">
-            <div class="div_was">
-                <p>Was soll berechnet werden?</p>
-                <label for="radio_aufschlagen">Mehrwertsteuer aufschlagen (Netto zu Brutto</label>
-                <input onchange="changeText()" id="radio_aufschlagen" type="radio" value="aufschlagen" name="radio">
-                <br>
-
-                <label for="radio_abziehen">Mehrwertsteuer abzeihen (Brutto zu Netto)</label>
-                <input onchange="changeText()" type="radio" id="radio_abziehen" value="abziehen" name="radio">
-            </div>
-            <div class="div_steuersatz">
-                <p>Mehrwertsteuersatz:</p>
-                <label for="19">19%</label>
-                <input type="radio" id="satz19" value="satz19" name="satz"> <br>
-
-                <label for="7%">7%</label>
-                <input type="radio" id="satz7" value="satz7" name="satz">
-            </div>
-            <div class="div_betrag">
-                <label for="input" id="label_input">Nettobetrag (Preis ohne Mehrwertsteuer in Euro)</label> <br>
-                <input type="text" id="input">
-            </div>
-            <button onclick="calculate()">Berechnen</button>
+    <section>
+        <form>
+            <fieldset>
+                <legend>Was soll berechnet werden?</legend>
+                <p>
+                    <input onclick="changeDescription()" name="calc" type="radio" id="calcNetToGross" checked>
+                    <label>Mehrwertsteuer aufschlagen (Netto zu Brutto)</label>
+                </p>
+                <p>
+                    <input onclick="changeDescription()" name="calc" type="radio" id="calcGrossToNet">
+                    <label>Mehrwertsteuer abziehen (Brutto zu Netto)</label>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Mehrwertsteuersatz</legend>
+                <label for="taxRate19">19%</label>
+                <input checked name="taxRate" type="radio" id="taxRate19">
+                <label for="taxRate7">7%</label>
+                <input name="taxRate" type="radio" id="taxRate7">
+            </fieldset>
+            <fieldset>
+                <legend id="amountDescription">Nettobetrag (Preis ohne Mehrwertsteuer) in Euro</legend>
+                <input type="text" id="amount" placeholder="10,00">
+            </fieldset>
+            <button type="submit" onclick="calculate(event)">BERECHNEN</button>
         </form>
-        <br>
-        <h1>Ergebnis:</h1>
-        <p>Mehrwertsteuerbetrag:</p>
-        <p id="mehrwert_output">MEHRWERTBETRAG</p>
-        <p id="derText">Bruttobetrag (Endpreis)</p>
-        <p id="b-n_output"> B-N-BETRAG</p>
-    </main>
+    </section>
+    <section>
+        <p>Ergebnis</p>
+        <article>
+            <p>Mehrwertsteuerbetrag</p>
+            <p id="taxAmount"></p>
+        </article>
+        <article>
+            <p id="resultDescription">Bruttobetrag (Endpreis)</p>
+            <p id="result"></p>
+        </article>
+    </section>
 
-    <script src="./assets/js/main.js"></script>
+
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
